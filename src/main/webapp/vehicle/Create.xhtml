@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVehicleTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_vehiculeId}" for="vehiculeId" />
+                    <h:inputText id="vehiculeId" value="#{vehicleController.selected.vehiculeId}" title="#{bundle.CreateVehicleTitle_vehiculeId}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_vehiculeId}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_mark}" for="mark" />
+                    <h:inputText id="mark" value="#{vehicleController.selected.mark}" title="#{bundle.CreateVehicleTitle_mark}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_mark}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_createDate}" for="createDate" />
+                    <h:inputText id="createDate" value="#{vehicleController.selected.createDate}" title="#{bundle.CreateVehicleTitle_createDate}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_createDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_dateAssurance}" for="dateAssurance" />
+                    <h:inputText id="dateAssurance" value="#{vehicleController.selected.dateAssurance}" title="#{bundle.CreateVehicleTitle_dateAssurance}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_dateAssurance}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{vehicleController.selected.description}" title="#{bundle.CreateVehicleTitle_description}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_description}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_fuelconsumption}" for="fuelconsumption" />
+                    <h:inputText id="fuelconsumption" value="#{vehicleController.selected.fuelconsumption}" title="#{bundle.CreateVehicleTitle_fuelconsumption}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_fuelconsumption}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_icon}" for="icon" />
+                    <h:inputText id="icon" value="#{vehicleController.selected.icon}" title="#{bundle.CreateVehicleTitle_icon}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_icon}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_insurancePhone}" for="insurancePhone" />
+                    <h:inputText id="insurancePhone" value="#{vehicleController.selected.insurancePhone}" title="#{bundle.CreateVehicleTitle_insurancePhone}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_insurancePhone}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_isactive}" for="isactive" />
+                    <h:inputText id="isactive" value="#{vehicleController.selected.isactive}" title="#{bundle.CreateVehicleTitle_isactive}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_isactive}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_lastOilChange}" for="lastOilChange" />
+                    <h:inputText id="lastOilChange" value="#{vehicleController.selected.lastOilChange}" title="#{bundle.CreateVehicleTitle_lastOilChange}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_lastOilChange}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_rememberBeforeoil}" for="rememberBeforeoil" />
+                    <h:inputText id="rememberBeforeoil" value="#{vehicleController.selected.rememberBeforeoil}" title="#{bundle.CreateVehicleTitle_rememberBeforeoil}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_rememberBeforeoil}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_lastplaybackdelete}" for="lastplaybackdelete" />
+                    <h:inputText id="lastplaybackdelete" value="#{vehicleController.selected.lastplaybackdelete}" title="#{bundle.CreateVehicleTitle_lastplaybackdelete}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_lastplaybackdelete}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_model}" for="model" />
+                    <h:inputText id="model" value="#{vehicleController.selected.model}" title="#{bundle.CreateVehicleTitle_model}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_model}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_periodAssurance}" for="periodAssurance" />
+                    <h:inputText id="periodAssurance" value="#{vehicleController.selected.periodAssurance}" title="#{bundle.CreateVehicleTitle_periodAssurance}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_periodAssurance}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_periodOilchange}" for="periodOilchange" />
+                    <h:inputText id="periodOilchange" value="#{vehicleController.selected.periodOilchange}" title="#{bundle.CreateVehicleTitle_periodOilchange}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_periodOilchange}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_problemsVehicle}" for="problemsVehicle" />
+                    <h:inputText id="problemsVehicle" value="#{vehicleController.selected.problemsVehicle}" title="#{bundle.CreateVehicleTitle_problemsVehicle}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_problemsVehicle}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_startkm}" for="startkm" />
+                    <h:inputText id="startkm" value="#{vehicleController.selected.startkm}" title="#{bundle.CreateVehicleTitle_startkm}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_startkm}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_typefuel}" for="typefuel" />
+                    <h:inputText id="typefuel" value="#{vehicleController.selected.typefuel}" title="#{bundle.CreateVehicleTitle_typefuel}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_typefuel}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_technicalInspectiondate}" for="technicalInspectiondate" />
+                    <h:inputText id="technicalInspectiondate" value="#{vehicleController.selected.technicalInspectiondate}" title="#{bundle.CreateVehicleTitle_technicalInspectiondate}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_technicalInspectiondate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_technicalInspectionperiod}" for="technicalInspectionperiod" />
+                    <h:inputText id="technicalInspectionperiod" value="#{vehicleController.selected.technicalInspectionperiod}" title="#{bundle.CreateVehicleTitle_technicalInspectionperiod}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_technicalInspectionperiod}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_rememberBeforetechnical}" for="rememberBeforetechnical" />
+                    <h:inputText id="rememberBeforetechnical" value="#{vehicleController.selected.rememberBeforetechnical}" title="#{bundle.CreateVehicleTitle_rememberBeforetechnical}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_rememberBeforetechnical}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_durationPlayback}" for="durationPlayback" />
+                    <h:inputText id="durationPlayback" value="#{vehicleController.selected.durationPlayback}" title="#{bundle.CreateVehicleTitle_durationPlayback}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_durationPlayback}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_registrationNumber}" for="registrationNumber" />
+                    <h:inputText id="registrationNumber" value="#{vehicleController.selected.registrationNumber}" title="#{bundle.CreateVehicleTitle_registrationNumber}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_registrationNumber}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_category}" for="category" />
+                    <h:inputText id="category" value="#{vehicleController.selected.category}" title="#{bundle.CreateVehicleTitle_category}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_category}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_color}" for="color" />
+                    <h:inputText id="color" value="#{vehicleController.selected.color}" title="#{bundle.CreateVehicleTitle_color}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_color}"/>
+                    <h:outputLabel value="#{bundle.CreateVehicleLabel_note}" for="note" />
+                    <h:inputText id="note" value="#{vehicleController.selected.note}" title="#{bundle.CreateVehicleTitle_note}" required="true" requiredMessage="#{bundle.CreateVehicleRequiredMessage_note}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{vehicleController.create}" value="#{bundle.CreateVehicleSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{vehicleController.prepareList}" value="#{bundle.CreateVehicleShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateVehicleIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

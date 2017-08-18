@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePersonneTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_persId}" for="persId" />
+                    <h:inputText id="persId" value="#{personneController.selected.persId}" title="#{bundle.CreatePersonneTitle_persId}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_persId}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_cin}" for="cin" />
+                    <h:inputText id="cin" value="#{personneController.selected.cin}" title="#{bundle.CreatePersonneTitle_cin}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_cin}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_persName}" for="persName" />
+                    <h:inputText id="persName" value="#{personneController.selected.persName}" title="#{bundle.CreatePersonneTitle_persName}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_persName}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_persFirstName}" for="persFirstName" />
+                    <h:inputText id="persFirstName" value="#{personneController.selected.persFirstName}" title="#{bundle.CreatePersonneTitle_persFirstName}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_persFirstName}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_ville}" for="ville" />
+                    <h:inputText id="ville" value="#{personneController.selected.ville}" title="#{bundle.CreatePersonneTitle_ville}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_ville}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_persAdresse}" for="persAdresse" />
+                    <h:inputText id="persAdresse" value="#{personneController.selected.persAdresse}" title="#{bundle.CreatePersonneTitle_persAdresse}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_persAdresse}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_persTel}" for="persTel" />
+                    <h:inputText id="persTel" value="#{personneController.selected.persTel}" title="#{bundle.CreatePersonneTitle_persTel}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_persTel}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_persEmail}" for="persEmail" />
+                    <h:inputText id="persEmail" value="#{personneController.selected.persEmail}" title="#{bundle.CreatePersonneTitle_persEmail}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_persEmail}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_postalCode}" for="postalCode" />
+                    <h:inputText id="postalCode" value="#{personneController.selected.postalCode}" title="#{bundle.CreatePersonneTitle_postalCode}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_postalCode}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_login}" for="login" />
+                    <h:inputText id="login" value="#{personneController.selected.login}" title="#{bundle.CreatePersonneTitle_login}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_login}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{personneController.selected.password}" title="#{bundle.CreatePersonneTitle_password}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonneLabel_isdelated}" for="isdelated" />
+                    <h:inputText id="isdelated" value="#{personneController.selected.isdelated}" title="#{bundle.CreatePersonneTitle_isdelated}" required="true" requiredMessage="#{bundle.CreatePersonneRequiredMessage_isdelated}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{personneController.create}" value="#{bundle.CreatePersonneSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{personneController.prepareList}" value="#{bundle.CreatePersonneShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePersonneIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

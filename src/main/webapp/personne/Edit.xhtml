@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPersonneTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_persId}" for="persId" />
+                    <h:inputText id="persId" value="#{personneController.selected.persId}" title="#{bundle.EditPersonneTitle_persId}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_persId}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_cin}" for="cin" />
+                    <h:inputText id="cin" value="#{personneController.selected.cin}" title="#{bundle.EditPersonneTitle_cin}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_cin}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_persName}" for="persName" />
+                    <h:inputText id="persName" value="#{personneController.selected.persName}" title="#{bundle.EditPersonneTitle_persName}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_persName}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_persFirstName}" for="persFirstName" />
+                    <h:inputText id="persFirstName" value="#{personneController.selected.persFirstName}" title="#{bundle.EditPersonneTitle_persFirstName}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_persFirstName}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_ville}" for="ville" />
+                    <h:inputText id="ville" value="#{personneController.selected.ville}" title="#{bundle.EditPersonneTitle_ville}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_ville}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_persAdresse}" for="persAdresse" />
+                    <h:inputText id="persAdresse" value="#{personneController.selected.persAdresse}" title="#{bundle.EditPersonneTitle_persAdresse}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_persAdresse}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_persTel}" for="persTel" />
+                    <h:inputText id="persTel" value="#{personneController.selected.persTel}" title="#{bundle.EditPersonneTitle_persTel}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_persTel}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_persEmail}" for="persEmail" />
+                    <h:inputText id="persEmail" value="#{personneController.selected.persEmail}" title="#{bundle.EditPersonneTitle_persEmail}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_persEmail}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_postalCode}" for="postalCode" />
+                    <h:inputText id="postalCode" value="#{personneController.selected.postalCode}" title="#{bundle.EditPersonneTitle_postalCode}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_postalCode}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_login}" for="login" />
+                    <h:inputText id="login" value="#{personneController.selected.login}" title="#{bundle.EditPersonneTitle_login}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_login}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{personneController.selected.password}" title="#{bundle.EditPersonneTitle_password}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.EditPersonneLabel_isdelated}" for="isdelated" />
+                    <h:inputText id="isdelated" value="#{personneController.selected.isdelated}" title="#{bundle.EditPersonneTitle_isdelated}" required="true" requiredMessage="#{bundle.EditPersonneRequiredMessage_isdelated}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{personneController.update}" value="#{bundle.EditPersonneSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPersonneViewLink}"/>
+                <br />
+                <h:commandLink action="#{personneController.prepareList}" value="#{bundle.EditPersonneShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditPersonneIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditApplicationConfigTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditApplicationConfigLabel_appId}" for="appId" />
+                    <h:inputText id="appId" value="#{applicationConfigController.selected.appId}" title="#{bundle.EditApplicationConfigTitle_appId}" required="true" requiredMessage="#{bundle.EditApplicationConfigRequiredMessage_appId}"/>
+                    <h:outputLabel value="#{bundle.EditApplicationConfigLabel_appName}" for="appName" />
+                    <h:inputText id="appName" value="#{applicationConfigController.selected.appName}" title="#{bundle.EditApplicationConfigTitle_appName}" required="true" requiredMessage="#{bundle.EditApplicationConfigRequiredMessage_appName}"/>
+                    <h:outputLabel value="#{bundle.EditApplicationConfigLabel_appValue}" for="appValue" />
+                    <h:inputText id="appValue" value="#{applicationConfigController.selected.appValue}" title="#{bundle.EditApplicationConfigTitle_appValue}" required="true" requiredMessage="#{bundle.EditApplicationConfigRequiredMessage_appValue}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{applicationConfigController.update}" value="#{bundle.EditApplicationConfigSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditApplicationConfigViewLink}"/>
+                <br />
+                <h:commandLink action="#{applicationConfigController.prepareList}" value="#{bundle.EditApplicationConfigShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditApplicationConfigIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
